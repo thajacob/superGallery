@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PhotoVC: UITableViewController {
 
@@ -20,6 +21,37 @@ class PhotoVC: UITableViewController {
         
     }
 
+ //MARK: - helper method that accepts dictionary and returns a NSManagedObject
+    
+    
+    private func createPhotoEntityFrom(dictionary: [String: AnyObject]) -> NSManagedObject? {
+        let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
+        if let photoEntity = NSEntityDescription.insertNewObject(forEntityName: "Photo", into: context) as? Photo {
+            photoEntity.author = dictionary["author"] as? String
+            photoEntity.tags = dictionary["tags"] as? String
+            
+            let mediaDictionary = dictionary["media"] as? [String: AnyObject]
+            photoEntity.mediaURL = mediaDictionary?["m"] as? String
+            return photoEntity
+            
+        }
+        return nil
+    }
+ // MARK: saving data in Core date using Map
+    
+    
+    private func saveInCoreDataWith(array: [[String: AnyObject]]) {
+        _ = array.map{self.createPhotoEntityFrom(dictionary: $0)}
+        do {
+            try
+                CoreDataStack.sharedInstance.persistentContainer.viewContext.save() }
+        catch let error {
+            print(error)
+        }
+        }
+        
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath) as! PhotoCell
         return cell

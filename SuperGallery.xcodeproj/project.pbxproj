@@ -17,6 +17,7 @@
 		4BDB393D1EF145FA00C13385 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB393C1EF145FA00C13385 /* APIService.swift */; };
 		4BDB39411EF169BB00C13385 /* Photo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB393F1EF169BB00C13385 /* Photo+CoreDataClass.swift */; };
 		4BDB39421EF169BC00C13385 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB39401EF169BB00C13385 /* Photo+CoreDataProperties.swift */; };
+		4BDB39441EF16A7B00C13385 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB39431EF16A7B00C13385 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		4BDB393C1EF145FA00C13385 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		4BDB393F1EF169BB00C13385 /* Photo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4BDB39401EF169BB00C13385 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4BDB39431EF16A7B00C13385 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,8 +50,6 @@
 		4BDB39171EF1343000C13385 = {
 			isa = PBXGroup;
 			children = (
-				4BDB393F1EF169BB00C13385 /* Photo+CoreDataClass.swift */,
-				4BDB39401EF169BB00C13385 /* Photo+CoreDataProperties.swift */,
 				4BDB39221EF1343100C13385 /* SuperGallery */,
 				4BDB39211EF1343100C13385 /* Products */,
 			);
@@ -67,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				4BDB39231EF1343100C13385 /* AppDelegate.swift */,
+				4BDB39451EF16D1100C13385 /* Data */,
 				4BDB393B1EF1400B00C13385 /* View */,
 				4BDB39381EF13C4300C13385 /* Controller */,
 				4BDB393E1EF14B4B00C13385 /* Model */,
@@ -101,6 +102,17 @@
 				4BDB393C1EF145FA00C13385 /* APIService.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		4BDB39451EF16D1100C13385 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4BDB393F1EF169BB00C13385 /* Photo+CoreDataClass.swift */,
+				4BDB39401EF169BB00C13385 /* Photo+CoreDataProperties.swift */,
+				4BDB39431EF16A7B00C13385 /* CoreDataStack.swift */,
+			);
+			name = Data;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +195,7 @@
 				4BDB39261EF1343100C13385 /* PhotoVC.swift in Sources */,
 				4BDB392C1EF1343100C13385 /* SuperGallery.xcdatamodeld in Sources */,
 				4BDB39241EF1343100C13385 /* AppDelegate.swift in Sources */,
+				4BDB39441EF16A7B00C13385 /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
