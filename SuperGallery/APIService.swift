@@ -43,7 +43,7 @@ class APIService: NSObject {
     
 //Mark: - func accepts parameter fetching data from server
     
-    func getDataWith(completion: @escaping (Result<[String: AnyObject]>) -> Void) {
+    func getDataWith(completion: @escaping (Result<[[String: AnyObject]]>) -> Void) {
         
         guard let url = URL(string: endPoint) else {return}
         
@@ -60,12 +60,18 @@ class APIService: NSObject {
                 //Mark: - call the completion on the main thread
                 
                 if let json = try JSONSerialization.jsonObject(with: data, options: [.mutableContainers]) as? [String: AnyObject] {
+                  
+                    //Mark: - json "items" downcast as an array of dictionaries
+                    
+                    guard let itemsJsonArray = json["items"] as? [[String: AnyObject]] else { return }
+                    
                     DispatchQueue.main.async {
-                        completion(.Success(json))
+                        completion(.Success(itemsJsonArray))
                     }
                 }
             } catch let error {
                 print(error)
+                
             }
             
             
