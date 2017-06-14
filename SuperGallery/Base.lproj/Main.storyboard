@@ -33,7 +33,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jEF-Th-ZSH">
-                                            <rect key="frame" x="19" y="8" width="340" height="205"/>
+                                            <rect key="frame" x="0.0" y="8" width="375" height="205"/>
                                             <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="205" id="b2W-0W-1fd"/>
@@ -62,11 +62,11 @@
                                         <constraint firstItem="jEF-Th-ZSH" firstAttribute="top" secondItem="t8e-36-9gT" secondAttribute="topMargin" id="4mN-XZ-N9B"/>
                                         <constraint firstItem="8ku-77-dTY" firstAttribute="top" secondItem="3zi-fF-3xi" secondAttribute="bottom" constant="8" id="BF8-Xu-LSD"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="3zi-fF-3xi" secondAttribute="trailing" constant="8" id="BLc-uU-6dD"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="jEF-Th-ZSH" secondAttribute="trailing" constant="8" id="I0f-DF-NeK"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="jEF-Th-ZSH" secondAttribute="trailing" constant="-8" id="I0f-DF-NeK"/>
                                         <constraint firstItem="8ku-77-dTY" firstAttribute="leading" secondItem="t8e-36-9gT" secondAttribute="leadingMargin" constant="11" id="TSB-uK-L3G"/>
                                         <constraint firstItem="3zi-fF-3xi" firstAttribute="top" secondItem="jEF-Th-ZSH" secondAttribute="bottom" constant="14" id="Y2k-we-m9I"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="8ku-77-dTY" secondAttribute="trailing" constant="8" id="gG1-9s-HaJ"/>
-                                        <constraint firstItem="jEF-Th-ZSH" firstAttribute="leading" secondItem="t8e-36-9gT" secondAttribute="leadingMargin" constant="11" id="h7P-F2-SEz"/>
+                                        <constraint firstItem="jEF-Th-ZSH" firstAttribute="leading" secondItem="t8e-36-9gT" secondAttribute="leadingMargin" constant="-8" id="h7P-F2-SEz"/>
                                         <constraint firstItem="3zi-fF-3xi" firstAttribute="leading" secondItem="t8e-36-9gT" secondAttribute="leadingMargin" constant="11" id="nb3-Ch-bZD"/>
                                     </constraints>
                                 </tableViewCellContentView>
