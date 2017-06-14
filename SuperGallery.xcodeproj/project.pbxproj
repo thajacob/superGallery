@@ -68,11 +68,12 @@
 		4BDB39221EF1343100C13385 /* SuperGallery */ = {
 			isa = PBXGroup;
 			children = (
+				4BDB393C1EF145FA00C13385 /* APIService.swift */,
 				4BDB39231EF1343100C13385 /* AppDelegate.swift */,
-				4BDB39451EF16D1100C13385 /* Data */,
+				4BDB39461EF1810000C13385 /* extentions.swift */,
+				4BDB39451EF16D1100C13385 /* Model */,
 				4BDB393B1EF1400B00C13385 /* View */,
 				4BDB39381EF13C4300C13385 /* Controller */,
-				4BDB393E1EF14B4B00C13385 /* Model */,
 				4BDB392D1EF1343100C13385 /* Assets.xcassets */,
 				4BDB39271EF1343100C13385 /* Main.storyboard */,
 				4BDB392F1EF1343100C13385 /* LaunchScreen.storyboard */,
@@ -94,27 +95,18 @@
 			isa = PBXGroup;
 			children = (
 				4BDB39391EF13FFE00C13385 /* PhotoCell.swift */,
-				4BDB39461EF1810000C13385 /* extentions.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
 		};
-		4BDB393E1EF14B4B00C13385 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				4BDB393C1EF145FA00C13385 /* APIService.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		4BDB39451EF16D1100C13385 /* Data */ = {
+		4BDB39451EF16D1100C13385 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				4BDB393F1EF169BB00C13385 /* Photo+CoreDataClass.swift */,
 				4BDB39401EF169BB00C13385 /* Photo+CoreDataProperties.swift */,
 				4BDB39431EF16A7B00C13385 /* CoreDataStack.swift */,
 			);
-			name = Data;
+			name = Model;
 			path = ..;
 			sourceTree = "<group>";
 		};

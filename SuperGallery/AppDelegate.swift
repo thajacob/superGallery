@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
         //MARK: - calling the aplicationdocumentdirectory from coreDataStack
         
-       // CoreDataStack.sharedInstance.applicationDocumentDirectory()
+        CoreDataStack.sharedInstance.applicationDocumentDirectory()
         
         return true
     }

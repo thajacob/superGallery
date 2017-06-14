@@ -21,7 +21,7 @@ enum Result <T>{
 
 class APIService: NSObject {
     
-    let query = "google"
+    let query = "cats"
     lazy var endPoint:String = { return "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=\(self.query)&nojsoncallback=1#" }()
     
 
@@ -60,7 +60,7 @@ class APIService: NSObject {
                 //Mark: - call the completion on the main thread
                 
                 if let json = try JSONSerialization.jsonObject(with: data, options: [.mutableContainers]) as? [String: AnyObject] {
-                  
+                 // print(json)
                     //Mark: - json "items" downcast as an array of dictionaries
                     
                     guard let itemsJsonArray = json["items"] as? [[String: AnyObject]] else { return }

@@ -10,10 +10,13 @@ import UIKit
 
 class PhotoCell: UITableViewCell {
 
-    @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var tagsLabel: UILabel!
-    @IBOutlet weak var photoImageview: UIImageView!
     
+    @IBOutlet weak var photoImageview: UIImageView!
+    @IBOutlet weak var tagsLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+        
+    
+   
     
     
     override func awakeFromNib() {
@@ -26,19 +29,17 @@ class PhotoCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-//MARK: Implementation of the set photos with cells
+//MARK: Implementation of the set data with cells
     
     func setPhotoCellWith(photo: Photo) {
         DispatchQueue.main.async {
             self.authorLabel.text = photo.author
             self.tagsLabel.text = photo.tags
             if let url = photo.mediaURL {
-                
-self.photoImageview.loadImageUsingCacheWithURLString(url, placeHolder: UIImage(named: "placeholder"))
+                self.photoImageview.loadImageUsingCacheWithURLString(url, placeHolder: UIImage(named: "placeholder"))
             }
         }
     }
-    
     
     
 }

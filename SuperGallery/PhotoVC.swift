@@ -20,42 +20,54 @@ class PhotoVC: UITableViewController {
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "author", ascending: true)]
             let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext:
                 CoreDataStack.sharedInstance.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
-            // frc.delegate = self
+                frc.delegate = self
             return frc
     }()
     
     
+    func viewDidAppear() {
+     tableView.register(PhotoCell.self, forCellReuseIdentifier: "cellID")
+        
+    }
     
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Photos Feed"
+        view.backgroundColor = .white
+        updateTableContent()
+        
+        
+    }
+    
+    
+    
+    func updateTableContent() {
         do {
             try self.fetchedResultController.performFetch()
             print("COUNT FETCHED FIRST: \(self.fetchedResultController.sections?[0].numberOfObjects)")
-        } catch let error {
+        } catch let error  {
             print("ERROR: \(error)")
         }
-        
-    
-        
-        
         let service = APIService()
         service.getDataWith { (result) in
             switch result {
             case .Success(let data):
+                self.clearData()
                 self.saveInCoreDataWith(array: data)
-                print(data)
             case .Error(let message):
                 DispatchQueue.main.async {
                     self.showAlertWith(title: "Error", message: message)
                 }
             }
         }
-        
+    
     }
+    
+    
+    
 
  //MARK: - helper method that accepts dictionary and returns a NSManagedObject
     
@@ -110,19 +122,60 @@ class PhotoVC: UITableViewController {
         }
         return cell
     }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let count = fetchedResultController.sections?.first?.numberOfObjects {
+            print("this is number of objects \(count)")
             return count
         }
-        return 0 
+        return 0
     }
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return view.frame.width + 100 //100 = sum of labels height + height of divider line
+        return view.frame.width  //100 = sum of labels height + height of divider line
+    }
+
+  
+    //MARK: clearingDATA that was saved before update our storage with new data coming from API. 
+    
+    
+    private func clearData() {
+        do {
+            let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Photo")
+            do {
+                let objects  = try context.fetch(fetchRequest) as? [NSManagedObject]
+                _ = objects.map{$0.map{context.delete($0)}}
+                CoreDataStack.sharedInstance.saveContext()
+            } catch let error {
+                print("ERROR DELETING : \(error)")
+            }
+        }
     }
 
     
-
 }
+
+extension PhotoVC: NSFetchedResultsControllerDelegate {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            self.tableView.insertRows(at: [newIndexPath!], with: .automatic)
+        case .delete:
+            self.tableView.deleteRows(at: [indexPath!], with: .automatic)
+        default:
+            break
+        }
+    }
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.endUpdates()
+    }
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+}
+    
+
+    
+
+
 
