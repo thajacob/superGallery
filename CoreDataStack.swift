@@ -61,7 +61,12 @@ class CoreDataStack: NSObject {
         }
     }
 
-    
+// MARK: - helper method to check what is going on when we save into CoreData
+    func applicationDocumentDirectory() {
+        if let url = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).last {
+            print(url.absoluteString)
+        }
+    }
     
     
 }
