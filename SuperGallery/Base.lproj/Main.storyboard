@@ -25,15 +25,16 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" rowHeight="299" id="TBI-Aq-t2P">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" rowHeight="299" id="TBI-Aq-t2P" customClass="PhotoCell" customModule="SuperGallery" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="299"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TBI-Aq-t2P" id="t8e-36-9gT">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="298"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jEF-Th-ZSH">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jEF-Th-ZSH">
                                             <rect key="frame" x="19" y="8" width="340" height="205"/>
+                                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="205" id="b2W-0W-1fd"/>
                                             </constraints>
@@ -69,6 +70,11 @@
                                         <constraint firstItem="3zi-fF-3xi" firstAttribute="leading" secondItem="t8e-36-9gT" secondAttribute="leadingMargin" constant="11" id="nb3-Ch-bZD"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="authorLabel" destination="8ku-77-dTY" id="rFY-Vo-pJk"/>
+                                    <outlet property="photoImageview" destination="jEF-Th-ZSH" id="OHv-lK-idM"/>
+                                    <outlet property="tagsLabel" destination="3zi-fF-3xi" id="dsy-2i-iUD"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
