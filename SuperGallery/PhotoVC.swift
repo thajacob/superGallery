@@ -29,9 +29,9 @@ class PhotoVC: UITableViewController, UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         
-       // let API = APIService()
+        let API = APIService()
         
-        var searchWord = searchBar.text!
+        search = searchBar.text!
         
 //        API.getDataWith { (result) in
 //            switch result {
@@ -115,7 +115,7 @@ class PhotoVC: UITableViewController, UISearchBarDelegate {
     private func createPhotoEntityFrom(dictionary: [String: AnyObject]) -> NSManagedObject? {
         let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
         if let photoEntity = NSEntityDescription.insertNewObject(forEntityName: "Photo", into: context) as? Photo {
-            photoEntity.author = dictionary["title"] as? String
+            photoEntity.author = dictionary["author"] as? String
             photoEntity.tags = dictionary["tags"] as? String
             
             let mediaDictionary = dictionary["media"] as? [String: AnyObject]

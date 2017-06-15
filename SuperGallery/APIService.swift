@@ -16,9 +16,7 @@ enum Result <T>{
     case Error(String)
 }
 
-let flickrKey =  "e55780f4088d497150679d482ed56919"
-
-var search: String = "blue"
+var search: String = ""
 var escapedSearchText: String = search.addingPercentEncoding(withAllowedCharacters:.urlHostAllowed)!
 var endPoint:String = { return "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=\(search)&nojsoncallback=1#" }()
 
@@ -56,7 +54,7 @@ class APIService: NSObject {
                   print(json)
                     //Mark: - json "items" downcast as an array of dictionaries
                     
-                    guard let itemsJsonArray = json["photos"] as? [[String: AnyObject]] else { return }
+                    guard let itemsJsonArray = json["items"] as? [[String: AnyObject]] else { return }
                     
                     
                     DispatchQueue.main.async {
