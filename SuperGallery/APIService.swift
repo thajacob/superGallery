@@ -23,9 +23,25 @@ var endPoint:String = { return "https://api.flickr.com/services/feeds/photos_pub
 
 
 
-class APIService: NSObject {
+class APIService: NSObject,UISearchBarDelegate,DataEnterDelegate {
+  
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        search = searchBar.text!
+    }
+    
+    func userDidEnterSearchInformation(info: String) {
+        
+        search = info
+        print("this is from API \(search)")
+        
+    }
     
     
+    
+        
+        
+   
 
 
     

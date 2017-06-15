@@ -9,11 +9,14 @@ import Foundation
 import UIKit
 import CoreData
 
-
+protocol DataEnterDelegate {
+    func userDidEnterSearchInformation(info:String)
+}
 
 class PhotoVC: UITableViewController, UISearchBarDelegate {
 
-
+    var delegate:DataEnterDelegate? = nil
+    
    
   //MARK: - Setting up search button 
     
@@ -28,24 +31,13 @@ class PhotoVC: UITableViewController, UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        
-        let API = APIService()
-        
         search = searchBar.text!
-        
-//        API.getDataWith { (result) in
-//            switch result {
-//            case .Success(let data):
-//                self.clearData()
-//                self.saveInCoreDataWith(array: data)
-//            case .Error(let message):
-//                DispatchQueue.main.async {
-//                    self.showAlertWith(title: "Error", message: message)
-//                }
-//            }
-//        }
+        let searchQuery = searchBar.text
+        delegate?.userDidEnterSearchInformation(info: searchQuery as String!)
         updateTableContent()
-        print("\(endPoint)")
+        
+        
+        
     }
     
     
@@ -175,9 +167,11 @@ class PhotoVC: UITableViewController, UISearchBarDelegate {
         return cell
     }
     
+   
+    
     func img_Click(sender: UILongPressGestureRecognizer) {
 
-        
+        print("OK I Taped")
             
       //      UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil)
     
