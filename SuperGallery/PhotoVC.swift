@@ -109,6 +109,8 @@ class PhotoVC: UITableViewController, UISearchBarDelegate {
         if let photoEntity = NSEntityDescription.insertNewObject(forEntityName: "Photo", into: context) as? Photo {
             photoEntity.author = dictionary["author"] as? String
             photoEntity.tags = dictionary["tags"] as? String
+            photoEntity.title = dictionary["title"] as? String
+            
             
             let mediaDictionary = dictionary["media"] as? [String: AnyObject]
             photoEntity.mediaURL = mediaDictionary?["m"] as? String
@@ -191,9 +193,7 @@ class PhotoVC: UITableViewController, UISearchBarDelegate {
         }
         return 0
     }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return view.frame.width  //100 = sum of labels height + height of divider line
-    }
+
 
   
     //MARK: clearingDATA that was saved before update our storage with new data coming from API. 

@@ -14,22 +14,22 @@
         <scene sceneID="XfY-VO-In1">
             <objects>
                 <tableViewController id="Ona-f5-7UJ" customClass="PhotoVC" customModule="SuperGallery" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="299" sectionHeaderHeight="28" sectionFooterHeight="28" id="Uod-hg-XRh">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="415" sectionHeaderHeight="28" sectionFooterHeight="28" id="Uod-hg-XRh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="2eu-AY-ovg">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" rowHeight="299" id="TBI-Aq-t2P" customClass="PhotoCell" customModule="SuperGallery" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="89" width="375" height="299"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" rowHeight="412" id="TBI-Aq-t2P" customClass="PhotoCell" customModule="SuperGallery" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="71" width="375" height="412"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TBI-Aq-t2P" id="t8e-36-9gT">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="299"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="411"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jEF-Th-ZSH">
@@ -39,19 +39,30 @@
                                                 <constraint firstAttribute="height" constant="205" id="b2W-0W-1fd"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zi-fF-3xi">
-                                            <rect key="frame" x="19" y="227" width="340" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zi-fF-3xi">
+                                            <rect key="frame" x="19" y="227" width="340" height="50"/>
+                                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="Qax-x8-OIC"/>
+                                                <constraint firstAttribute="height" constant="50" id="Qax-x8-OIC"/>
+                                            </constraints>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ku-77-dTY">
+                                            <rect key="frame" x="19" y="291" width="340" height="50"/>
+                                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="kEi-IE-jm8"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ku-77-dTY">
-                                            <rect key="frame" x="19" y="256" width="340" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enE-84-WDG">
+                                            <rect key="frame" x="19" y="353.5" width="340" height="50"/>
+                                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="kEi-IE-jm8"/>
+                                                <constraint firstAttribute="height" constant="50" id="zwH-G7-YtF"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -60,19 +71,23 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="jEF-Th-ZSH" firstAttribute="top" secondItem="t8e-36-9gT" secondAttribute="topMargin" id="4mN-XZ-N9B"/>
-                                        <constraint firstItem="8ku-77-dTY" firstAttribute="top" secondItem="3zi-fF-3xi" secondAttribute="bottom" constant="8" id="BF8-Xu-LSD"/>
+                                        <constraint firstItem="8ku-77-dTY" firstAttribute="top" secondItem="3zi-fF-3xi" secondAttribute="bottom" constant="14" id="BF8-Xu-LSD"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="3zi-fF-3xi" secondAttribute="trailing" constant="8" id="BLc-uU-6dD"/>
+                                        <constraint firstItem="enE-84-WDG" firstAttribute="leading" secondItem="t8e-36-9gT" secondAttribute="leadingMargin" constant="11" id="CeV-JX-egT"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="jEF-Th-ZSH" secondAttribute="trailing" constant="-8" id="I0f-DF-NeK"/>
                                         <constraint firstItem="8ku-77-dTY" firstAttribute="leading" secondItem="t8e-36-9gT" secondAttribute="leadingMargin" constant="11" id="TSB-uK-L3G"/>
                                         <constraint firstItem="3zi-fF-3xi" firstAttribute="top" secondItem="jEF-Th-ZSH" secondAttribute="bottom" constant="14" id="Y2k-we-m9I"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="8ku-77-dTY" secondAttribute="trailing" constant="8" id="gG1-9s-HaJ"/>
                                         <constraint firstItem="jEF-Th-ZSH" firstAttribute="leading" secondItem="t8e-36-9gT" secondAttribute="leadingMargin" constant="-8" id="h7P-F2-SEz"/>
+                                        <constraint firstItem="enE-84-WDG" firstAttribute="bottom" secondItem="t8e-36-9gT" secondAttribute="bottomMargin" id="iom-nB-szU"/>
                                         <constraint firstItem="3zi-fF-3xi" firstAttribute="leading" secondItem="t8e-36-9gT" secondAttribute="leadingMargin" constant="11" id="nb3-Ch-bZD"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="enE-84-WDG" secondAttribute="trailing" constant="8" id="uIV-i3-65q"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="authorLabel" destination="3zi-fF-3xi" id="WrH-67-118"/>
                                     <outlet property="photoImageview" destination="jEF-Th-ZSH" id="FnM-Uh-E5b"/>
+                                    <outlet property="published" destination="enE-84-WDG" id="v9x-D6-x0p"/>
                                     <outlet property="tagsLabel" destination="8ku-77-dTY" id="umR-Gj-en0"/>
                                 </connections>
                             </tableViewCell>

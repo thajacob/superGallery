@@ -11,25 +11,27 @@ import UIKit
 class PhotoCell: UITableViewCell {
 
     
+    @IBOutlet weak var published: UILabel!
     @IBOutlet weak var photoImageview: UIImageView!
     @IBOutlet weak var tagsLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
         
     
    internal let tapRecognizer1: UILongPressGestureRecognizer = UILongPressGestureRecognizer()
+   
     
     
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+       
     }
 //MARK: Implementation of the set data with cells
     
@@ -37,6 +39,7 @@ class PhotoCell: UITableViewCell {
         DispatchQueue.main.async {
             self.authorLabel.text = photo.author
             self.tagsLabel.text = photo.tags
+            self.published.text = photo.title
             if let url = photo.mediaURL {
                 self.photoImageview.loadImageUsingCacheWithURLString(url, placeHolder: UIImage(named: "placeholder"))
             }

@@ -4,8 +4,9 @@
         <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mediaURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tags" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Photo" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Photo" positionX="-63" positionY="-18" width="128" height="105"/>
     </elements>
 </model>

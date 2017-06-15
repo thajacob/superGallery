@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B263B4E1EF33A3C00CBAAA9 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B263B4D1EF33A3C00CBAAA9 /* Photo+CoreDataProperties.swift */; };
 		4BDB39241EF1343100C13385 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB39231EF1343100C13385 /* AppDelegate.swift */; };
 		4BDB39261EF1343100C13385 /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB39251EF1343100C13385 /* PhotoVC.swift */; };
 		4BDB39291EF1343100C13385 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BDB39271EF1343100C13385 /* Main.storyboard */; };
@@ -16,12 +17,12 @@
 		4BDB393A1EF13FFE00C13385 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB39391EF13FFE00C13385 /* PhotoCell.swift */; };
 		4BDB393D1EF145FA00C13385 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB393C1EF145FA00C13385 /* APIService.swift */; };
 		4BDB39411EF169BB00C13385 /* Photo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB393F1EF169BB00C13385 /* Photo+CoreDataClass.swift */; };
-		4BDB39421EF169BC00C13385 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB39401EF169BB00C13385 /* Photo+CoreDataProperties.swift */; };
 		4BDB39441EF16A7B00C13385 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB39431EF16A7B00C13385 /* CoreDataStack.swift */; };
 		4BDB39471EF1810000C13385 /* extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB39461EF1810000C13385 /* extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B263B4D1EF33A3C00CBAAA9 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4BDB39201EF1343100C13385 /* SuperGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BDB39231EF1343100C13385 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BDB39251EF1343100C13385 /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
@@ -33,7 +34,6 @@
 		4BDB39391EF13FFE00C13385 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		4BDB393C1EF145FA00C13385 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		4BDB393F1EF169BB00C13385 /* Photo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataClass.swift"; sourceTree = "<group>"; };
-		4BDB39401EF169BB00C13385 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4BDB39431EF16A7B00C13385 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		4BDB39461EF1810000C13385 /* extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,8 +102,8 @@
 		4BDB39451EF16D1100C13385 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4B263B4D1EF33A3C00CBAAA9 /* Photo+CoreDataProperties.swift */,
 				4BDB393F1EF169BB00C13385 /* Photo+CoreDataClass.swift */,
-				4BDB39401EF169BB00C13385 /* Photo+CoreDataProperties.swift */,
 				4BDB39431EF16A7B00C13385 /* CoreDataStack.swift */,
 			);
 			name = Model;
@@ -183,13 +183,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BDB39421EF169BC00C13385 /* Photo+CoreDataProperties.swift in Sources */,
 				4BDB39411EF169BB00C13385 /* Photo+CoreDataClass.swift in Sources */,
 				4BDB393A1EF13FFE00C13385 /* PhotoCell.swift in Sources */,
 				4BDB39471EF1810000C13385 /* extentions.swift in Sources */,
 				4BDB393D1EF145FA00C13385 /* APIService.swift in Sources */,
 				4BDB39261EF1343100C13385 /* PhotoVC.swift in Sources */,
 				4BDB392C1EF1343100C13385 /* SuperGallery.xcdatamodeld in Sources */,
+				4B263B4E1EF33A3C00CBAAA9 /* Photo+CoreDataProperties.swift in Sources */,
 				4BDB39241EF1343100C13385 /* AppDelegate.swift in Sources */,
 				4BDB39441EF16A7B00C13385 /* CoreDataStack.swift in Sources */,
 			);
