@@ -16,7 +16,9 @@ class PhotoCell: UITableViewCell {
     @IBOutlet weak var authorLabel: UILabel!
         
     
-   
+   internal let tapRecognizer1: UILongPressGestureRecognizer = UILongPressGestureRecognizer()
+    
+    
     
     
     override func awakeFromNib() {
@@ -40,6 +42,7 @@ class PhotoCell: UITableViewCell {
             }
         }
     }
+    
     
     
 }

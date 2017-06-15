@@ -29,23 +29,25 @@ class APIService: NSObject {
     
  //MARK: - REST REQUEST
     
-    func URLForSearchingString(searchString: String) -> String {
+    struct Keys {
     
-    let apiKey:String = "e55780f4088d497150679d482ed56919"
-    let search:String = searchString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-        
+    static let flickrKey =  "e55780f4088d497150679d482ed56919"
     
-        return "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(apiKey)$text=\(search)&per_page20$format=json&nojsoncallback=1"
     }
-    
-    
+
     
     
 //Mark: - func accepts parameter fetching data from server
     
     func getDataWith(completion: @escaping (Result<[[String: AnyObject]]>) -> Void) {
         
+        
+        
+        
+        
+        
         guard let url = URL(string: endPoint) else {return}
+     
         
         //Mark: - URLSession with completion get request to server
         

@@ -9,8 +9,27 @@ import Foundation
 import UIKit
 import CoreData
 
-class PhotoVC: UITableViewController {
+class PhotoVC: UITableViewController, UISearchBarDelegate {
 
+
+    
+    
+    
+    
+  
+
+    
+  //MARK: - Setting up search button 
+    
+    fileprivate func setupSearchBtn(){
+        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 65))
+        
+        
+        searchBar.delegate = self
+        self.tableView.tableHeaderView = searchBar
+    }
+    
+    
     
     //MARK: - creating fetch using variable. 
     
@@ -34,10 +53,11 @@ class PhotoVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupSearchBtn()
         self.title = "Photos Feed"
         view.backgroundColor = .white
         updateTableContent()
+    
         
         
     }
@@ -115,13 +135,41 @@ class PhotoVC: UITableViewController {
     }
    
     
+    
+    
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath) as! PhotoCell
         if let photo = fetchedResultController.object(at: indexPath) as? Photo {
             cell.setPhotoCellWith(photo: photo)
+          
+            //MARK: - tapRecognise implementation 
+            
+            cell.tapRecognizer1.addTarget(self, action: #selector(PhotoVC.img_Click(sender:)))
+            cell.photoImageview.gestureRecognizers = []
+            cell.photoImageview.gestureRecognizers!.append(cell.tapRecognizer1)
+            
+            
         }
         return cell
     }
+    
+    func img_Click(sender: UILongPressGestureRecognizer) {
+
+        
+            
+      //      UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil)
+    
+        
+    
+    }
+    
+   
+    
+    
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let count = fetchedResultController.sections?.first?.numberOfObjects {
             print("this is number of objects \(count)")
