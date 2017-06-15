@@ -9,16 +9,12 @@ import Foundation
 import UIKit
 import CoreData
 
+
+
 class PhotoVC: UITableViewController, UISearchBarDelegate {
 
 
-    
-    
-    
-    
-  
-
-    
+   
   //MARK: - Setting up search button 
     
     fileprivate func setupSearchBtn(){
@@ -27,9 +23,33 @@ class PhotoVC: UITableViewController, UISearchBarDelegate {
         
         searchBar.delegate = self
         self.tableView.tableHeaderView = searchBar
+    
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        
+       // let API = APIService()
+        
+        var searchWord = searchBar.text!
+        
+//        API.getDataWith { (result) in
+//            switch result {
+//            case .Success(let data):
+//                self.clearData()
+//                self.saveInCoreDataWith(array: data)
+//            case .Error(let message):
+//                DispatchQueue.main.async {
+//                    self.showAlertWith(title: "Error", message: message)
+//                }
+//            }
+//        }
+        updateTableContent()
+        print("\(endPoint)")
     }
     
     
+   
     
     //MARK: - creating fetch using variable. 
     
@@ -95,7 +115,7 @@ class PhotoVC: UITableViewController, UISearchBarDelegate {
     private func createPhotoEntityFrom(dictionary: [String: AnyObject]) -> NSManagedObject? {
         let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
         if let photoEntity = NSEntityDescription.insertNewObject(forEntityName: "Photo", into: context) as? Photo {
-            photoEntity.author = dictionary["author"] as? String
+            photoEntity.author = dictionary["title"] as? String
             photoEntity.tags = dictionary["tags"] as? String
             
             let mediaDictionary = dictionary["media"] as? [String: AnyObject]

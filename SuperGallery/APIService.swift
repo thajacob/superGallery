@@ -16,24 +16,19 @@ enum Result <T>{
     case Error(String)
 }
 
+let flickrKey =  "e55780f4088d497150679d482ed56919"
+
+var search: String = "blue"
+var escapedSearchText: String = search.addingPercentEncoding(withAllowedCharacters:.urlHostAllowed)!
+var endPoint:String = { return "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=\(search)&nojsoncallback=1#" }()
+
 
 
 
 class APIService: NSObject {
     
-    let query = "cats"
-    lazy var endPoint:String = { return "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=\(self.query)&nojsoncallback=1#" }()
     
 
-    
-    
- //MARK: - REST REQUEST
-    
-    struct Keys {
-    
-    static let flickrKey =  "e55780f4088d497150679d482ed56919"
-    
-    }
 
     
     
@@ -41,11 +36,7 @@ class APIService: NSObject {
     
     func getDataWith(completion: @escaping (Result<[[String: AnyObject]]>) -> Void) {
         
-        
-        
-        
-        
-        
+        print("API \(endPoint)")
         guard let url = URL(string: endPoint) else {return}
      
         
@@ -62,10 +53,11 @@ class APIService: NSObject {
                 //Mark: - call the completion on the main thread
                 
                 if let json = try JSONSerialization.jsonObject(with: data, options: [.mutableContainers]) as? [String: AnyObject] {
-                 // print(json)
+                  print(json)
                     //Mark: - json "items" downcast as an array of dictionaries
                     
-                    guard let itemsJsonArray = json["items"] as? [[String: AnyObject]] else { return }
+                    guard let itemsJsonArray = json["photos"] as? [[String: AnyObject]] else { return }
+                    
                     
                     DispatchQueue.main.async {
                         completion(.Success(itemsJsonArray))
