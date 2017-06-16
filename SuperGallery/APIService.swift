@@ -32,7 +32,7 @@ class APIService: NSObject,UISearchBarDelegate, DataEnterDelegate {
         
         endPoint = { return "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=\(search)&nojsoncallback=1#" }()
         print(endPoint)
-        print("boo")
+        
     }
     
     

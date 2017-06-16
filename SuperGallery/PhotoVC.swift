@@ -88,6 +88,7 @@ class PhotoVC: UITableViewController, UISearchBarDelegate {
         setupSearchBtn()
         self.title = "Photos Feed"
         view.backgroundColor = .white
+        
         updateTableContent()
     
         
