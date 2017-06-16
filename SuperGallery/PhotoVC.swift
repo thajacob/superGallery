@@ -40,10 +40,30 @@ class PhotoVC: UITableViewController, UISearchBarDelegate {
         
     }
     
+    // MARK - reloading for searchBar
     
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar)
+    {
+        
+        let service = APIService()
+        
+        service.searchBarSearchButtonClicked(searchBar)
+        service.getDataWith { (result) in
+            switch result {
+            case .Success(let data):
+                self.clearData()
+                self.saveInCoreDataWith(array: data)
+            case .Error(let message):
+                DispatchQueue.main.async {
+                    self.showAlertWith(title: "Error", message: message)
+                }
+            }
+        }
+    }
+
    
     
-    //MARK: - creating fetch using variable. 
+    //MARK: - creating fetch using variable.
     
     lazy var fetchedResultController:
         NSFetchedResultsController<NSFetchRequestResult> = {
@@ -181,9 +201,10 @@ class PhotoVC: UITableViewController, UISearchBarDelegate {
     
     }
     
-   
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        Animator.animateCell(cell, withTransform: Animator.Tilt, andDuration: 1)
     
-    
+    }
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -234,10 +255,9 @@ extension PhotoVC: NSFetchedResultsControllerDelegate {
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
-}
-    
 
-    
+}
+
 
 
 

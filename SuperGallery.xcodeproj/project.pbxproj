@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4B263B4E1EF33A3C00CBAAA9 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B263B4D1EF33A3C00CBAAA9 /* Photo+CoreDataProperties.swift */; };
+		4B263B501EF356A400CBAAA9 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B263B4F1EF356A400CBAAA9 /* Animator.swift */; };
+		4B263B561EF3626A00CBAAA9 /* prefixRemovalExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B263B551EF3626A00CBAAA9 /* prefixRemovalExtention.swift */; };
 		4BDB39241EF1343100C13385 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB39231EF1343100C13385 /* AppDelegate.swift */; };
 		4BDB39261EF1343100C13385 /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB39251EF1343100C13385 /* PhotoVC.swift */; };
 		4BDB39291EF1343100C13385 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BDB39271EF1343100C13385 /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		4B263B4D1EF33A3C00CBAAA9 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4B263B4F1EF356A400CBAAA9 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		4B263B551EF3626A00CBAAA9 /* prefixRemovalExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = prefixRemovalExtention.swift; sourceTree = "<group>"; };
 		4BDB39201EF1343100C13385 /* SuperGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BDB39231EF1343100C13385 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BDB39251EF1343100C13385 /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
@@ -49,6 +53,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B263B511EF356AD00CBAAA9 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				4B263B4F1EF356A400CBAAA9 /* Animator.swift */,
+			);
+			name = Extras;
+			sourceTree = "<group>";
+		};
+		4B263B541EF35ED100CBAAA9 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				4BDB39461EF1810000C13385 /* extentions.swift */,
+				4B263B551EF3626A00CBAAA9 /* prefixRemovalExtention.swift */,
+			);
+			name = Extentions;
+			sourceTree = "<group>";
+		};
 		4BDB39171EF1343000C13385 = {
 			isa = PBXGroup;
 			children = (
@@ -70,7 +91,8 @@
 			children = (
 				4BDB393C1EF145FA00C13385 /* APIService.swift */,
 				4BDB39231EF1343100C13385 /* AppDelegate.swift */,
-				4BDB39461EF1810000C13385 /* extentions.swift */,
+				4B263B541EF35ED100CBAAA9 /* Extentions */,
+				4B263B511EF356AD00CBAAA9 /* Extras */,
 				4BDB39451EF16D1100C13385 /* Model */,
 				4BDB393B1EF1400B00C13385 /* View */,
 				4BDB39381EF13C4300C13385 /* Controller */,
@@ -183,12 +205,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B263B501EF356A400CBAAA9 /* Animator.swift in Sources */,
 				4BDB39411EF169BB00C13385 /* Photo+CoreDataClass.swift in Sources */,
 				4BDB393A1EF13FFE00C13385 /* PhotoCell.swift in Sources */,
 				4BDB39471EF1810000C13385 /* extentions.swift in Sources */,
 				4BDB393D1EF145FA00C13385 /* APIService.swift in Sources */,
 				4BDB39261EF1343100C13385 /* PhotoVC.swift in Sources */,
 				4BDB392C1EF1343100C13385 /* SuperGallery.xcdatamodeld in Sources */,
+				4B263B561EF3626A00CBAAA9 /* prefixRemovalExtention.swift in Sources */,
 				4B263B4E1EF33A3C00CBAAA9 /* Photo+CoreDataProperties.swift in Sources */,
 				4BDB39241EF1343100C13385 /* AppDelegate.swift in Sources */,
 				4BDB39441EF16A7B00C13385 /* CoreDataStack.swift in Sources */,
@@ -312,6 +336,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 98SY24H39Z;
 				INFOPLIST_FILE = SuperGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -325,6 +350,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 98SY24H39Z;
 				INFOPLIST_FILE = SuperGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -19,9 +19,7 @@ class PhotoCell: UITableViewCell {
     
    internal let tapRecognizer1: UILongPressGestureRecognizer = UILongPressGestureRecognizer()
    
-    
-    
-    
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,7 +35,8 @@ class PhotoCell: UITableViewCell {
     
     func setPhotoCellWith(photo: Photo) {
         DispatchQueue.main.async {
-            self.authorLabel.text = photo.author
+            
+            self.authorLabel.text = photo.author?.chopPrefix(17)
             self.tagsLabel.text = photo.tags
             self.published.text = photo.title
             if let url = photo.mediaURL {
@@ -48,4 +47,8 @@ class PhotoCell: UITableViewCell {
     
     
     
+    
+    
+    
 }
+

@@ -23,12 +23,18 @@ var endPoint:String = { return "https://api.flickr.com/services/feeds/photos_pub
 
 
 
-class APIService: NSObject,UISearchBarDelegate,DataEnterDelegate {
+class APIService: NSObject,UISearchBarDelegate, DataEnterDelegate {
   
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
+    {
         search = searchBar.text!
+        print(search)
+        
+        endPoint = { return "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=\(search)&nojsoncallback=1#" }()
+        print(endPoint)
+        print("boo")
     }
+    
     
     func userDidEnterSearchInformation(info: String) {
         
@@ -36,9 +42,6 @@ class APIService: NSObject,UISearchBarDelegate,DataEnterDelegate {
         print("this is from API \(search)")
         
     }
-    
-    
-    
         
         
    
@@ -50,7 +53,7 @@ class APIService: NSObject,UISearchBarDelegate,DataEnterDelegate {
     
     func getDataWith(completion: @escaping (Result<[[String: AnyObject]]>) -> Void) {
         
-        print("API \(endPoint)")
+       // print("API \(endPoint)")
         guard let url = URL(string: endPoint) else {return}
      
         

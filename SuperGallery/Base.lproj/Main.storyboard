@@ -25,7 +25,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" rowHeight="412" id="TBI-Aq-t2P" customClass="PhotoCell" customModule="SuperGallery" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellID" rowHeight="412" id="TBI-Aq-t2P" customClass="PhotoCell" customModule="SuperGallery" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="71" width="375" height="412"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TBI-Aq-t2P" id="t8e-36-9gT">
@@ -84,6 +84,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="enE-84-WDG" secondAttribute="trailing" constant="8" id="uIV-i3-65q"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.16536432504653931" green="0.47453659772872925" blue="0.63367599248886108" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="authorLabel" destination="3zi-fF-3xi" id="WrH-67-118"/>
                                     <outlet property="photoImageview" destination="jEF-Th-ZSH" id="FnM-Uh-E5b"/>
